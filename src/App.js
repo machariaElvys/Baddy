@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Post from "./pages/Post";
 import "./index.css";
 
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -15,7 +16,7 @@ function App() {
   return (
     <div>
       <button onClick={() => setDarkMode(!darkMode)} className="toggle-btn">
-        {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+        {darkMode ? "☀️ " : "🌙 "}
       </button>
 
       <Router>

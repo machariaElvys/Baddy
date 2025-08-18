@@ -59,7 +59,7 @@ function Post() {
         
         {/* Post Content */}
         <div className="post-content">
-          <h1 className="reveal">Blog Post {id}</h1>
+          {/* <h1 className="reveal">Blog Post {id}</h1> */}
           
           <section id="introduction" className="reveal">
             <h2>Introduction</h2>

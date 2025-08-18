@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 
 // Sample post data
 const postsData = [
-  { id: 1, title: "Glow Up Tips", content: "Drink water, wear SPF, and slay every day.", image:"https://shorturl.at/E5BmS" },
-  { id: 2, title: "OOTD Inspo", content: "Serving looks with every step.", image:"https://shorturl.at/ZTQBd" },
-  { id: 3, title: "Confidence 101", content: "Head high, crown on. You're the main character.", image:"https://shorturl.at/sfUcR" },
-  { id: 3, title: "Gurlz Out", content: "Head high, crown on. You're the main character." , image:"https://shorturl.at/WDpe2" }
-
+  { id: 1, title: "HOW'S THAT FACE?", content: "FIND OUT!.", image:"https://shorturl.at/E5BmS" },
+  { id: 2, title: "ARE YOU SERVING?", content: "Serving looks with every step.", image:"https://shorturl.at/ZTQBd" },
+  { id: 3, title: "CONFIDENCE ISN'T COCKY...", content: "Confidence is key, darling!", image:"https://shorturl.at/1aupN" },
+  { id: 4, title: "WE OUTSIDE!", content: "Every outing is a chance to outshine yesterday" , image:"https://shorturl.at/5rmIZ" },
+  { id: 5, title: "TECH VIBES", content: "Error 404: Limits not found." , image:"https://shorturl.at/J8p6C" },
+  { id: 6, title: "WHAT I'M I GOOD AT?", content: "Gifted. Loaded. Ready to launch" , image:"https://rb.gy/5wxhvl" }
 
 ];
 
@@ -60,16 +61,16 @@ function PostCard({ post }) {
       <h2>{post.title}</h2>
       <p>{post.content}</p>
 
+      <Link to={`/post/${post.id}`} className="read-more">
+        Read More
+      </Link>
+
       <div className="post-actions">
         <button onClick={handleLike} className="like-btn">
           ❤️
         </button>
         <span className={`like-count ${likeAnim ? "animate" : ""}`}>{likes}</span>
       </div>
-
-      <Link to={`/post/${post.id}`} className="read-more">
-        Read More
-      </Link>
     </div>
   );
 }

@@ -1,23 +1,28 @@
 /* ==================================================
    Global Styles & Resets
 ================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Sankofa+Display&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #fce4ec; /* Soft pink aesthetic */
-  color: #333;
-  padding: 20px;
-  margin: 0;
+ 
+  background-color: #ad1b9060; /* Light background */
+ 
 }
 
+
+
 h1 {
+    font-family: "Sankofa Display", sans-serif;
+
   text-align: center;
-  font-size: 3rem;
+  font-size: 5rem;
   color: #d63384; /* Baddie pink */
   font-weight: bold;
   margin-bottom: 20px;
@@ -207,7 +212,7 @@ h1 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   margin: 30 auto;        
   
   /* Let card height adjust based on content */
@@ -233,7 +238,7 @@ h1 {
 
 /* Post Card Image */
 .post-image {
-  width: 100%;                /* Full width of card */
+  width: 55%;                /* Full width of card */
   height: auto;               /* Adjust height based on aspect ratio */
   object-fit: contain;        /* Ensures the full image is visible */
   border-radius: 10px;
