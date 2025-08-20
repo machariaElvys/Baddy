@@ -1,7 +1,7 @@
 /* ==================================================
    Global Styles & Resets
 ================================================== */
-
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Sankofa+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sankofa+Display&display=swap');
 * {
   box-sizing: border-box;
@@ -113,15 +113,17 @@ h1 {
 .read-more:hover {
   background: #b0276b;
 }
+ 
+
 
 /* Dark Mode Overrides */
 .dark-mode {
   background-color: #222 !important;
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .dark-mode .read-more {
-  background: #ff85a2 !important;
+  background: #ed5c7e !important;
   color: black !important;
 }
 
@@ -206,14 +208,17 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #ffffff, #ffe4e1);
+  background: linear-gradient(135deg, #ffffff, #eebeba);
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
   width: 100%;
   max-width: 400px;
-  margin: 30 auto;        
+  margin: 30 auto;   
+  font-family: "Just Me Again Down Here", cursive;  
+  font-size: 1.4em;
+  height: 100%;
   
   /* Let card height adjust based on content */
 }
@@ -239,7 +244,7 @@ h1 {
 /* Post Card Image */
 .post-image {
   width: 55%;                /* Full width of card */
-  height: auto;               /* Adjust height based on aspect ratio */
+  height: 100;               /* Adjust height based on aspect ratio */
   object-fit: contain;        /* Ensures the full image is visible */
   border-radius: 10px;
   margin-bottom: 15px;
@@ -408,3 +413,19 @@ h1 {
     max-width: 90%;
   }
 }
+
+.post-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.post-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+

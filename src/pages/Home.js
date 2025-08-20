@@ -41,37 +41,78 @@ function Home() {
   );
 }
 
+// function PostCard({ post }) {
+//   const [likes, setLikes] = useState(0);
+//   const [likeAnim, setLikeAnim] = useState(false);
+
+//   // Handle like button click
+//   const handleLike = () => {
+//     setLikes(likes + 1);
+//     setLikeAnim(true);
+//     // Remove the animation class after 300ms so it can be re-triggered on subsequent clicks
+//     setTimeout(() => {
+//       setLikeAnim(false);
+//     }, 300);
+//   };
+
+//   return (
+//     <div className="post-card">
+//          <img src={post.image} alt={post.title} className="post-image" />
+//       <h2>{post.title}</h2>
+//       <p>{post.content}</p>
+
+//       <Link to={`/post/${post.id}`} className="read-more">
+//         Read More
+//       </Link>
+
+      
+
+//       <div className="post-actions">
+//         <button onClick={handleLike} className="like-btn">
+//           ❤️
+//         </button>
+//         <span className={`like-count ${likeAnim ? "animate" : ""}`}>{likes}</span>
+//       </div>
+
+//     </div>
+    
+//   );
+
+// }
+
+
+// export default Home;
+
 function PostCard({ post }) {
   const [likes, setLikes] = useState(0);
   const [likeAnim, setLikeAnim] = useState(false);
 
-  // Handle like button click
-  const handleLike = () => {
+  const handleLike = (e) => {
+    e.preventDefault(); // prevent navigating away when clicking the like button
     setLikes(likes + 1);
     setLikeAnim(true);
-    // Remove the animation class after 300ms so it can be re-triggered on subsequent clicks
     setTimeout(() => {
       setLikeAnim(false);
     }, 300);
   };
 
   return (
-    <div className="post-card">
-         <img src={post.image} alt={post.title} className="post-image" />
-      <h2>{post.title}</h2>
-      <p>{post.content}</p>
+    <Link to={`/post/${post.id}`} className="post-card-link">
+      <div className="post-card">
+        <img src={post.image} alt={post.title} className="post-image" />
+        <h2>{post.title}</h2>
+        <p>{post.content}</p>
 
-      <Link to={`/post/${post.id}`} className="read-more">
-        Read More
-      </Link>
-
-      <div className="post-actions">
-        <button onClick={handleLike} className="like-btn">
-          ❤️
-        </button>
-        <span className={`like-count ${likeAnim ? "animate" : ""}`}>{likes}</span>
+        <div className="post-actions">
+          <button onClick={handleLike} className="like-btn">
+            ❤️
+          </button>
+          <span className={`like-count ${likeAnim ? "animate" : ""}`}>
+            {likes}
+          </span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
